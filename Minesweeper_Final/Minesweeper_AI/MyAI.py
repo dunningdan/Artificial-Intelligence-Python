@@ -1,11 +1,11 @@
 # Hootan Hosseinzadeganbushehri
 
 
-import random
 from math import inf
 from AI import AI
 from Action import Action
 from collections import deque
+import secrets
 
 
 class MyAI(AI):
@@ -371,7 +371,7 @@ class MyAI(AI):
                 if y == least:
                     self.bound_check1 += 1
                     least_selection.append(x)
-            self.solution_queue.append(random.choice(least_selection))
+            self.solution_queue.append(secrets.choice(least_selection))
         if self.check_out and self.traps_remained == 0:
             self.grid_check2 = False
             return Action(AI.Action(0))

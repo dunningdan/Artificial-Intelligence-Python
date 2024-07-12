@@ -10,9 +10,9 @@
 # NOTES: 		- DO NOT MAKE CHANGES TO THIS FILE.
 # ==============================CS-199==================================
 
-import random
 from AI import AI
 from Action import Action
+import secrets
 
 
 class RandomAI ( AI ):
@@ -25,14 +25,14 @@ class RandomAI ( AI ):
 
 	def getAction(self, number: int) -> "Action Object":
 		while self.__moveCount < 5:
-			action = AI.Action(random.randrange(1, len(AI.Action)))
-			x = random.randrange(self.__colDimension)
-			y = random.randrange(self.__rowDimension)
+			action = AI.Action(secrets.SystemRandom().randrange(1, len(AI.Action)))
+			x = secrets.SystemRandom().randrange(self.__colDimension)
+			y = secrets.SystemRandom().randrange(self.__rowDimension)
 			self.__moveCount += 1
 			return Action(action, x, y)
 
-		action = AI.Action(random.randrange(len(AI.Action)))
-		x = random.randrange(self.__colDimension)
-		y = random.randrange(self.__rowDimension)
+		action = AI.Action(secrets.SystemRandom().randrange(len(AI.Action)))
+		x = secrets.SystemRandom().randrange(self.__colDimension)
+		y = secrets.SystemRandom().randrange(self.__rowDimension)
 
 		return Action(action, x, y)

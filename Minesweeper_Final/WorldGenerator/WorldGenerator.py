@@ -24,9 +24,9 @@
 #				- DO NOT MAKE CHANGES TO THIS FILE.
 # ==============================CS-199==================================
 
-import random
 import os
 import argparse
+import secrets
 
 
 def generateWorlds(numWorlds: int, baseFileName: "string", rowDimension: int, colDimension: int, numMines: int) -> None:
@@ -96,7 +96,7 @@ def createWorldFile(filename: "string", rowDimension: int, colDimension: int, nu
 
 def __randomInt(limit: int) -> int:
 	""" Return a random between 1 and limit """
-	return random.randrange(1, limit)
+	return secrets.SystemRandom().randrange(1, limit)
 
 
 def __isInBounds(x: int, y: int, nRows: int, nCols: int) -> bool:

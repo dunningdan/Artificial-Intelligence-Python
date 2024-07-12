@@ -11,11 +11,11 @@
 # NOTES: 		- DO NOT MAKE CHANGES TO THIS FILE.
 # ==============================CS-199==================================
 
-import random
 from ManualAI import ManualAI
 from RandomAI import RandomAI
 from MyAI import MyAI
 from AI import AI
+import secrets
 
 
 class World():
@@ -368,7 +368,7 @@ class World():
 	#####################################################
 	def __randomInt(self, limit: int) -> int:
 		""" Return a random int within the range from 0 to limit """
-		return random.randrange(limit)
+		return secrets.SystemRandom().randrange(limit)
 
 
 	def __isInBounds(self, c: int, r: int) -> bool:
